@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <a href="{% url 'customers:customer-list' %}">Go back to customers</a>
+    <hr>
+    <h1>Assign an agent to this customer</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock content %}
+
+    
